@@ -1,0 +1,212 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://slimasaude.com');
+const currentPath = Astro.url.pathname;
+
+const {
+  title,
+  description = 'Programa de saude com acompanhamento profissional individualizado. Avaliacao online com especialistas e suporte continuo para sua jornada de bem-estar.',
+  image = '/og-image.jpg',
+  type = 'website'
+} = Astro.props;
+
+const ogImage = new URL(image, Astro.site || 'https://slimasaude.com').toString();
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!--
+      ===========================================
+      TRACKING SCRIPTS - GTM, Meta Pixel, Google
+      ===========================================
+      All pixels should be configured via GTM for easier management.
+      GTM Container: GTM-5XB6SPLS
+
+      To add Meta Pixel:
+      1. Go to GTM > Tags > New
+      2. Add Custom HTML tag with Meta Pixel base code
+      3. Trigger on "All Pages"
+
+      To add Google Ads:
+      1. Go to GTM > Tags > New
+      2. Use Google Ads Conversion Tracking template
+      3. Configure conversion ID and label
+    -->
+
+    <!-- Google Consent Mode v2 - Must be before GTM -->
+    <script is:inline>
+      // Initialize dataLayer and gtag before GTM loads
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      // Set default consent state to granted
+      gtag('consent', 'default', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'granted',
+        'security_storage': 'granted'
+      });
+
+      // Enable URL passthrough for better conversion tracking without cookies
+      gtag('set', 'url_passthrough', true);
+      // Enable ads data redaction when consent is denied
+      gtag('set', 'ads_data_redaction', true);
+    </script>
+    <!-- End Google Consent Mode v2 -->
+
+    <!-- Google Tag Manager (Web) - Must be after Consent Mode -->
+    <script is:inline>
+      // GTM Web Script
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5XB6SPLS');
+    </script>
+    <!-- End Google Tag Manager (Web) -->
+
+    <!-- Google Tag Manager (Server-Side via Stape) -->
+    <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://apsiazej.sae.stape.io/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5XB6SPLS');
+    </script>
+    <!-- End Google Tag Manager (Server-Side) -->
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Portuguese" />
+    <meta name="author" content="Slima Saude" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#034B80" />
+    <meta name="msapplication-TileColor" content="#034B80" />
+
+    <!-- Facebook Domain Verification -->
+    <meta name="facebook-domain-verification" content="okg1y9axzde9xmdtoajec4r1xdy9c9" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Slima - Programa de Saude com Acompanhamento Profissional" />
+    <meta property="og:site_name" content="Slima Saude" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Slima - Programa de Saude com Acompanhamento Profissional" />
+
+    <!-- Additional SEO -->
+    <meta name="keywords" content="saude, acompanhamento profissional, saude online, avaliacao, bem-estar, Slima" />
+    <meta name="geo.region" content="BR" />
+    <meta name="geo.placename" content="Brasil" />
+
+    <!-- Google Fonts - Deferred loading for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" rel="stylesheet" /></noscript>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/fonts/Gellix-Regular.otf" as="font" type="font/otf" crossorigin />
+
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) - Web -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XB6SPLS"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) Web -->
+
+    <!-- Google Tag Manager (noscript) - Server-Side via Stape -->
+    <noscript>
+      <iframe src="https://apsiazej.sae.stape.io/ns.html?id=GTM-5XB6SPLS"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) Server-Side -->
+
+    <slot />
+
+    <!--
+      ===========================================
+      PAGE TRACKING - Fires once per page load
+      ===========================================
+    -->
+    <script is:inline define:vars={{ currentPath, title }}>
+      // Prevent duplicate pageviews with a flag
+      if (!window.__pageViewFired) {
+        window.__pageViewFired = true;
+
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+          // Push pageview to dataLayer for GTM
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'page_view',
+            'page_path': currentPath,
+            'page_title': title,
+            'page_location': window.location.href
+          });
+
+        });
+      }
+    </script>
+
+    <!-- Typebot Chat Widget -->
+    <script type="module" is:inline>
+      import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
+      Typebot.initBubble({
+        typebot: "lead-generation-344mj2y",
+        apiHost: "https://typebot.co",
+        previewMessage: {
+          message: "Quer emagrecer com acompanhamento médico?",
+          autoShowDelay: 5000,
+        },
+        theme: {
+          button: { backgroundColor: "#0499C7" },
+          previewMessage: { backgroundColor: "#ffffff", textColor: "#1B2B41" },
+        },
+      })
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/react/Header';
+import Footer from '../components/astro/Footer.astro';
+import ObrigadoContent from '../components/react/ObrigadoContent';
+---
+
+<BaseLayout title="Obrigado | Slima">
+  <div class="min-h-screen bg-gradient-to-b from-[#F7FBFF] to-[#E9F4FF]">
+    <Header client:load />
+    <ObrigadoContent client:load />
+    <Footer />
+  </div>
+</BaseLayout>

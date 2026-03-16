@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Gellix';
+  src: url('/fonts/Gellix-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gellix';
+  src: url('/fonts/Gellix-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gellix';
+  src: url('/fonts/Gellix-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gellix';
+  src: url('/fonts/Gellix-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-font-weight {
+    animation: font-weight-fade 3s steps(1) forwards;
+  }
+}
+
+@keyframes font-weight-fade {
+  0% { font-weight: 900; }
+  33% { font-weight: 700; }
+  66% { font-weight: 500; }
+  100% { font-weight: 400; }
+}
+

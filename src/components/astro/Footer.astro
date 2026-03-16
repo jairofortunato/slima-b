@@ -1,0 +1,159 @@
+---
+// Footer component with legal information
+---
+
+<footer class="w-full bg-[#F2F2F2] pt-16 md:pt-24 overflow-hidden relative">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+
+    <!-- Top Section: Links & Info -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 md:mb-16 justify-items-start md:justify-items-center">
+
+      <!-- Navigation Links -->
+      <div class="flex flex-col space-y-4">
+        <h4 class="font-sans font-bold text-navy-900 text-lg">Navegação</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="/#home" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Início
+            </a>
+          </li>
+          <li>
+            <a href="/#how-it-works" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Como Funciona
+            </a>
+          </li>
+          <li>
+            <a href="/#results" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Resultados
+            </a>
+          </li>
+          <li>
+            <a href="/#science" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Ciência
+            </a>
+          </li>
+          <li>
+            <a href="/#faq" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Dúvidas
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Legal Links -->
+      <div class="flex flex-col space-y-4">
+        <h4 class="font-sans font-bold text-navy-900 text-lg">Legal</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="/termos" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Termos de Uso
+            </a>
+          </li>
+          <li>
+            <a href="/privacidade" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Política de Privacidade
+            </a>
+          </li>
+          <li>
+            <a href="/telemedicina" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Atendimento Online
+            </a>
+          </li>
+          <li>
+            <a href="/cookies" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Política de Cookies
+            </a>
+          </li>
+          <li>
+            <a href="/reembolso" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Política de Reembolso
+            </a>
+          </li>
+          <li>
+            <a href="/consentimento" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Termo de Consentimento
+            </a>
+          </li>
+          <li>
+            <a href="/excluir-dados" class="text-navy-900/60 hover:text-navy-900 font-sans text-sm transition-colors">
+              Excluir Meus Dados
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div class="flex flex-col space-y-4">
+         <h4 class="font-sans font-bold text-navy-900 text-lg">Social</h4>
+         <div class="flex gap-4">
+            <a href="https://www.instagram.com/slimasaude/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-navy-900 shadow-sm hover:shadow-md transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+         </div>
+      </div>
+
+      <!-- Anvisa -->
+      <div class="flex flex-col space-y-4">
+        <p class="font-sans text-navy-900 text-sm">
+          A Slima segue as determinações da Anvisa.
+        </p>
+        <img
+          src="/Logo.Anvisa.webp"
+          alt="Anvisa"
+          class="w-32 h-auto object-contain"
+        />
+      </div>
+
+    </div>
+
+    <!-- Legal Disclaimer Section -->
+    <div class="border-t border-navy-900/10 pt-8 pb-8 space-y-6">
+
+      <!-- Company Info -->
+      <div class="text-center">
+        <p class="text-navy-900/60 font-sans text-xs leading-relaxed max-w-4xl mx-auto">
+          <strong class="text-navy-900/80">Slima Intermediação e Negócios LTDA</strong>, inscrita sob CNPJ 64.659.582/0001-03, atua de acordo com a legislação brasileira e com a norma da Anvisa RDC nº 660/2022. Nenhuma informação aqui deve ser interpretada como garantia de resultados. Consulte sempre um profissional de saúde.
+        </p>
+      </div>
+
+      <!-- Copyright and Links -->
+      <div class="text-center">
+        <p class="text-navy-900/50 font-sans text-xs">
+          Copyright &copy; 2025 Slima &mdash; Todos os direitos reservados
+        </p>
+        <div class="flex items-center justify-center gap-2 mt-2">
+          <a href="/privacidade" class="text-navy-900/50 hover:text-navy-900 font-sans text-xs transition-colors">
+            Política de Privacidade
+          </a>
+          <span class="text-navy-900/30">|</span>
+          <a href="/termos" class="text-navy-900/50 hover:text-navy-900 font-sans text-xs transition-colors">
+            Termos de Uso
+          </a>
+        </div>
+      </div>
+
+      <!-- Platform Disclaimer -->
+      <div class="text-center">
+        <p class="text-navy-900/40 font-sans text-[10px] leading-relaxed max-w-3xl mx-auto">
+          Este site não faz parte do Google, Facebook, Instagram ou Meta Platforms Inc. Além disso, este site não é endossado por essas plataformas de nenhuma maneira.
+        </p>
+      </div>
+
+      <!-- Health Disclaimer -->
+      <div class="bg-navy-900/5 rounded-lg p-4 max-w-4xl mx-auto">
+        <p class="text-navy-900/60 font-sans text-[11px] leading-relaxed text-center">
+          <strong class="text-navy-900/70">Aviso Importante:</strong> A Slima é uma plataforma de saúde com acompanhamento profissional. Os resultados variam de pessoa para pessoa e dependem de avaliação individual. O acompanhamento pode auxiliar no processo, mas não garante resultados específicos. Consulte sempre um profissional de saúde antes de iniciar qualquer programa.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Giant Watermark Text -->
+  <div class="w-full flex justify-center items-end leading-none select-none pointer-events-none">
+    <h1 class="font-sans font-light text-[#E5E5E5] text-[25vw] lg:text-[28vw] leading-[0.75] tracking-tighter transform translate-y-[10%]">
+      Slima
+    </h1>
+  </div>
+</footer>

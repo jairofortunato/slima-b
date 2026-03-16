@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx lighthouse:*)",
+      "Bash(find:*)",
+      "Bash(sort:*)",
+      "Bash(curl:*)",
+      "Bash(grep:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nMajor update: Legal compliance, cookie consent, performance optimizations\n\n- Add cookie consent popup \\(LGPD compliance\\)\n- Add /reembolso \\(refund policy\\) page\n- Add /consentimento \\(consent terms\\) page\n- Update /termos with full legal terms\n- Update landing page copy for ad compliance:\n  - Remove GLP-1/medication mentions from headlines\n  - Remove weight numbers from testimonials\n  - Focus on \"health program with medical support\"\n- Add /original page with previous marketing copy\n- Optimize images \\(convert PNG to WebP, compress\\)\n- Defer third-party scripts \\(PostHog, Leadster\\)\n- Add lazy loading to images\n- Update meta tags and SEO keywords\n- Update footer with stronger disclaimers\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nMajor update: Legal compliance, cookie consent, performance optimizations\n\n- Add cookie consent popup \\(LGPD compliance\\)\n- Add /reembolso \\(refund policy\\) page\n- Add /consentimento \\(consent terms\\) page  \n- Update /termos with full legal terms\n- Update landing page copy for ad compliance:\n  - Remove GLP-1/medication mentions from headlines\n  - Remove weight numbers from testimonials\n  - Focus on health program with medical support\n- Add /original page with previous marketing copy\n- Optimize images \\(convert PNG to WebP, compress\\)\n- Defer third-party scripts \\(PostHog, Leadster\\)\n- Add lazy loading to images\n- Update meta tags and SEO keywords\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(vercel ls:*)",
+      "Bash(git push)",
+      "Bash(git fetch:*)",
+      "Bash(git rm:*)",
+      "Bash(cwebp:*)",
+      "WebFetch(domain:www.slimasaude.com)",
+      "WebFetch(domain:typebot.io)",
+      "WebFetch(domain:tawk.to)",
+      "WebFetch(domain:www.tidio.com)",
+      "WebFetch(domain:www.chatwoot.com)",
+      "WebFetch(domain:docs.typebot.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:n8n.io)",
+      "WebFetch(domain:community.chatwoot.com)",
+      "WebSearch",
+      "Bash(git push:*)"
+    ]
+  }
+}

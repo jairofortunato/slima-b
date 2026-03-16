@@ -1,0 +1,30 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/react/Header';
+import Footer from '../components/astro/Footer.astro';
+
+interface Props {
+  title: string;
+  updateDate?: string;
+}
+
+const { title, updateDate } = Astro.props;
+---
+
+<BaseLayout title={`${title} | Slima`}>
+  <div class="min-h-screen bg-white">
+    <Header client:load />
+    <main class="max-w-4xl mx-auto px-4 md:px-8 py-16 lg:py-24 pt-28">
+      <div class="mb-12">
+        <h1 class="text-3xl md:text-5xl font-sans font-bold text-navy-800 mb-4">{title}</h1>
+        {updateDate && (
+          <p class="text-gray-500 text-sm">Ultima atualizacao: {updateDate}</p>
+        )}
+      </div>
+      <div class="prose prose-lg prose-blue max-w-none text-gray-600 font-sans">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>
