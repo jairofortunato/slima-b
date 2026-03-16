@@ -188,21 +188,24 @@ const ogImage = new URL(image, Astro.site || 'https://slimasaude.com').toString(
       }
     </script>
 
-    <!-- Typebot Chat Widget -->
+    <!-- Typebot Chat Widget (Popup Modal) -->
     <script type="module" is:inline>
       import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
-      Typebot.initBubble({
-        typebot: "lead-generation-344mj2y",
-        apiHost: "https://typebot.co",
-        previewMessage: {
-          message: "Quer emagrecer com acompanhamento médico?",
-          autoShowDelay: 5000,
-        },
-        theme: {
-          button: { backgroundColor: "#0499C7" },
-          previewMessage: { backgroundColor: "#ffffff", textColor: "#1B2B41" },
-        },
-      })
+
+      let typebotInitialized = false;
+
+      window.openTypebotPopup = function() {
+        if (!typebotInitialized) {
+          Typebot.initPopup({
+            typebot: "lead-generation-344mj2y",
+            apiHost: "https://typebot.co",
+            autoShowDelay: 0,
+          });
+          typebotInitialized = true;
+        } else {
+          Typebot.open();
+        }
+      }
     </script>
   </body>
 </html>

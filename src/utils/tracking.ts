@@ -2,7 +2,7 @@
  * Tracking utilities for CTA clicks and analytics
  */
 
-// Declare posthog on window for TypeScript
+// Declare posthog and typebot popup on window for TypeScript
 declare global {
   interface Window {
     posthog?: {
@@ -10,6 +10,7 @@ declare global {
       capture: (event: string, properties?: Record<string, unknown>) => void;
     };
     dataLayer?: Array<Record<string, unknown>>;
+    openTypebotPopup?: () => void;
   }
 }
 
@@ -85,9 +86,6 @@ export const handleCtaClick = () => {
     destination: 'quiz_form'
   });
 
-  // Small delay to ensure tracking fires before redirect
-  setTimeout(() => {
-    const url = getRedirectUrl();
-    window.location.href = url;
-  }, 100);
+  // Open Typebot popup modal instead of redirecting
+  window.openTypebotPopup?.();
 };
