@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/react/Header';
 import Hero from '../components/react/Hero';
 import Results from '../components/react/Results';
-import ResultsRaylane from '../components/react/ResultsRaylane';
 import ScienceSection from '../components/react/ScienceSection';
 import MedicalProof from '../components/astro/MedicalProof.astro';
 import Testimonials from '../components/react/Testimonials';
@@ -22,17 +21,17 @@ const googleReviews = await fetchGoogleReviews();
       <div id="home">
         <Hero client:load googleReviews={googleReviews} />
       </div>
+
+      <Testimonials client:visible googleReviews={googleReviews} />
+
       <div id="results">
         <Results client:visible />
       </div>
-      <ResultsRaylane client:visible />
       <div id="science">
         <ScienceSection client:visible />
       </div>
 
       <MedicalProof />
-
-      <Testimonials client:visible googleReviews={googleReviews} />
 
       <div id="how-it-works">
         <HowItWorks />

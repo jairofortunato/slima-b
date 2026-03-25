@@ -6,13 +6,20 @@ import { handleCtaClick } from '../../utils/tracking';
 export const ScienceSection: React.FC = () => {
   return (
     <section className="relative w-full py-24 lg:pt-32 lg:pb-64 pb-64 overflow-hidden flex items-center min-h-[600px] z-10">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
-        <img
-          src="/menosfome.webp"
-          alt=""
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="/science-bg-poster.webp"
           className="w-full h-full object-cover"
-        />
+        >
+          <source src="/science-bg.webm" type="video/webm" />
+          <source src="/science-bg.mp4" type="video/mp4" />
+        </video>
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
       </div>

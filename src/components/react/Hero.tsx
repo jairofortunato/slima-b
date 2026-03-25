@@ -73,31 +73,37 @@ export const Hero: React.FC<HeroProps> = ({ googleReviews }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {/* Left Container */}
           <motion.div
-            className="group min-h-48 md:h-64 rounded-2xl bg-gradient-to-br from-[#2196F3] to-[#01335A] overflow-hidden relative p-5 md:p-6 cursor-pointer transition-all duration-300 lg:hover:scale-[1.03] lg:hover:shadow-2xl lg:hover:shadow-blue-500/25 flex flex-col justify-between"
+            className="group min-h-48 md:h-64 rounded-2xl overflow-hidden relative p-5 md:p-6 cursor-pointer transition-all duration-300 lg:hover:scale-[1.03] lg:hover:shadow-2xl lg:hover:shadow-blue-500/25 flex flex-col justify-between"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
             onClick={handleCtaClick}
           >
+            {/* Background video */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/hero-card1-poster.webp"
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/hero-card1.webm" type="video/webm" />
+              <source src="/hero-card1.mp4" type="video/mp4" />
+            </video>
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2196F3]/40 to-[#01335A]/50" />
+
             {/* Top left text */}
             <p className="relative z-10 text-white font-sans text-lg md:text-xl font-bold leading-tight">
               Perca peso<br />
               <span className="font-normal text-white/80">do seu jeito</span>
             </p>
 
-            {/* Center image */}
-            <motion.img
-              src="/icones.png"
-              alt="Ícones de tratamento"
-              className="absolute inset-0 m-auto w-40 md:w-52 h-auto object-contain opacity-90"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 0.9, scale: 1 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.5 }}
-            />
-
             {/* Bottom row */}
             <div className="relative z-10 flex justify-end">
-              <div className="bg-white/20 lg:group-hover:bg-white/30 rounded-full flex items-center gap-1.5 pl-4 pr-2 py-1.5 md:py-2 transition-all duration-300">
+              <div className="bg-gradient-to-r from-[#0499C7] to-[#015AC1] lg:group-hover:from-[#0388b0] lg:group-hover:to-[#014aab] rounded-full flex items-center gap-1.5 pl-4 pr-2 py-1.5 md:py-2 transition-all duration-300">
                 <span className="text-white font-semibold text-sm md:text-base whitespace-nowrap">Quero emagrecer</span>
                 <ChevronRight className="w-6 h-6 md:w-7 md:h-7 text-white transition-transform duration-300 lg:group-hover:translate-x-1" />
               </div>
@@ -106,30 +112,36 @@ export const Hero: React.FC<HeroProps> = ({ googleReviews }) => {
 
           {/* Right Container */}
           <motion.div
-            className="group min-h-48 md:h-64 rounded-2xl bg-gradient-to-b from-[#1F3148] to-[#1565C0] overflow-hidden relative p-5 md:p-6 cursor-pointer transition-all duration-300 lg:hover:scale-[1.03] lg:hover:shadow-2xl lg:hover:shadow-blue-500/25 flex flex-col justify-between"
+            className="group min-h-48 md:h-64 rounded-2xl overflow-hidden relative p-5 md:p-6 cursor-pointer transition-all duration-300 lg:hover:scale-[1.03] lg:hover:shadow-2xl lg:hover:shadow-blue-500/25 flex flex-col justify-between"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.45 }}
             onClick={handleCtaClick}
           >
+            {/* Background video */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/hero-card2-poster.webp"
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/hero-card2.webm" type="video/webm" />
+              <source src="/hero-card2.mp4" type="video/mp4" />
+            </video>
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1F3148]/40 to-[#1565C0]/50" />
+
             {/* Top left text */}
             <p className="relative z-10 text-white font-sans text-lg md:text-xl font-bold leading-tight">
-              Monitore seu progresso
+              Acompanhamento profissional
             </p>
-
-            {/* Center image */}
-            <motion.img
-              src="/doses.png"
-              alt="Controle de doses"
-              className="absolute inset-0 m-auto w-56 md:w-72 h-auto object-contain opacity-90"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 0.9, scale: 1 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.65 }}
-            />
 
             {/* Bottom row */}
             <div className="relative z-10 flex justify-end">
-              <div className="bg-white/20 lg:group-hover:bg-white/30 rounded-full flex items-center gap-1.5 pl-4 pr-2 py-1.5 md:py-2 transition-all duration-300">
+              <div className="bg-gradient-to-r from-[#0499C7] to-[#015AC1] lg:group-hover:from-[#0388b0] lg:group-hover:to-[#014aab] rounded-full flex items-center gap-1.5 pl-4 pr-2 py-1.5 md:py-2 transition-all duration-300">
                 <span className="text-white font-semibold text-sm md:text-base whitespace-nowrap">Quero emagrecer</span>
                 <ChevronRight className="w-6 h-6 md:w-7 md:h-7 text-white transition-transform duration-300 lg:group-hover:translate-x-1" />
               </div>
