@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/react/Header';
+import Hero from '../components/react/Hero';
+import Results from '../components/react/Results';
+import ScienceSection from '../components/react/ScienceSection';
+import MedicalProof from '../components/astro/MedicalProof.astro';
+import Testimonials from '../components/react/Testimonials';
+import HowItWorks from '../components/astro/HowItWorks.astro';
+import FAQListSection from '../components/react/FAQListSection';
+import Footer from '../components/astro/Footer.astro';
+import { fetchGoogleReviews } from '../utils/googleReviews';
+
+const googleReviews = await fetchGoogleReviews();
+---
+
+<BaseLayout title="Slima - Emagrecimento com Acompanhamento Profissional">
+  <div class="min-h-screen bg-gradient-to-b from-[#F7FBFF] to-[#E9F4FF]">
+    <Header client:load />
+    <main class="pt-24 md:pt-28">
+      <div id="home">
+        <Hero client:load googleReviews={googleReviews} />
+      </div>
+
+      <Testimonials client:visible googleReviews={googleReviews} />
+
+      <div id="results">
+        <Results client:visible />
+      </div>
+      <div id="science">
+        <ScienceSection client:visible />
+      </div>
+
+      <MedicalProof />
+
+      <div id="how-it-works">
+        <HowItWorks />
+      </div>
+      <div id="faq">
+        <FAQListSection client:visible />
+      </div>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>
