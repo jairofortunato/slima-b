@@ -65,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({ googleReviews }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
           >
-            personalizado para você
+            seguro e acessível
           </motion.span>
         </h1>
 
