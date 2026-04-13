@@ -4,6 +4,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: string;
+  pageRef?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://slimasaude.com');
@@ -13,7 +14,8 @@ const {
   title,
   description = 'Programa de saude com acompanhamento profissional individualizado. Avaliacao online com especialistas e suporte continuo para sua jornada de bem-estar.',
   image = '/og-image.jpg',
-  type = 'website'
+  type = 'website',
+  pageRef
 } = Astro.props;
 
 const ogImage = new URL(image, Astro.site || 'https://slimasaude.com').toString();
@@ -189,18 +191,35 @@ const ogImage = new URL(image, Astro.site || 'https://slimasaude.com').toString(
     </script>
 
     <!-- Typebot Chat Widget (Popup Modal) -->
-    <script type="module" is:inline>
+    <script type="module" is:inline define:vars={{ pageRef }}>
       import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
 
       let typebotInitialized = false;
 
+      // Resolve the "ref" value to forward to Typebot as a prefilled variable.
+      // Priority: explicit ?ref=... query param > per-page pageRef prop.
+      // This value is read by the Typebot flow and forwarded to the backend /
+      // Kommo integration so we can attribute leads to their source page.
+      function resolveRef() {
+        try {
+          const urlRef = new URLSearchParams(window.location.search).get('ref');
+          if (urlRef) return urlRef;
+        } catch (e) {}
+        return pageRef || null;
+      }
+
       window.openTypebotPopup = function() {
         if (!typebotInitialized) {
-          Typebot.initPopup({
+          const ref = resolveRef();
+          const initConfig = {
             typebot: "lead-generation-344mj2y",
             apiHost: "https://typebot.co",
             autoShowDelay: 0,
-          });
+          };
+          if (ref) {
+            initConfig.prefilledVariables = { ref: ref };
+          }
+          Typebot.initPopup(initConfig);
           typebotInitialized = true;
         } else {
           Typebot.open();
